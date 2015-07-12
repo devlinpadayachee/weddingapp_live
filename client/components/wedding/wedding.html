@@ -1,0 +1,122 @@
+<template name="wedding">
+
+    <div class="container">
+
+         
+              <div class="row top-buffer">
+
+                    <div class="col-md-12">
+                           
+                           <!--  {{> sAlert}} -->
+                       <!--      <div class="alert alert-success fade in">
+                                <a href="#" class="close" data-dismiss="alert">
+                                &times;
+                                </a>
+                                <strong>Tip!</strong> 
+                                Set up your guest list. It's easy just don't invite people you don't like.
+                           </div> -->
+                    </div>
+
+                    <div class="col-md-6">
+
+                          <div class="panel panel-primary" >
+
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Create a wedding</h3>
+                                </div>
+                                <form role = "form" class="form-horizontal" id = "create_wedding_form">
+                                    <div class="panel-body">
+
+                                        <div class="input-group input-group-sm" style="width:100%">
+                                            <span class="input-group-addon"   style="width:150px">Wedding name</span>
+                                            <input type="text" name = "weddingname" class="form-control"  placeholder="Wedding name" required>
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%"> 
+                                            <span class="input-group-addon"  style="width:150px">Venue</span>
+                                            <input type="text" name = "venue" class="form-control" placeholder="Venue" required>
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%"> 
+                                            <span class="input-group-addon" style="width:150px">Wedding location</span>
+
+                                   
+
+                                                    <input class="form-control"  id="location" type="text" name="location" placeholder="Start typing your venue address" autocomplete="off">
+                                                    <input class="form-control" name = "lat" type="hidden" data-geo="lat">  
+                                                    <input class="form-control" name = "lng" type="hidden" data-geo="lng">
+                                                    <input class="form-control" name = "formatted_address" type="hidden" data-geo="formatted_address">          
+                                                    <span class="input-group-addon">
+                                                       <i class="glyphicon glyphicon-globe"></i>
+                                                    </span>
+                                   
+                                     
+                                        </div>
+
+
+                               
+                                        <div class="input-group input-group-sm" style="width:100%"> 
+                                            <span class="input-group-addon"  style="width:150px">Bride name</span>
+                                            <input type="text" name = "bridename" class="form-control" placeholder="Bride name" required>
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%"> 
+                                            <span class="input-group-addon"  style="width:150px">Groom name</span>
+                                            <input type="text" name = "groomname" class="form-control" placeholder="Groom name" required>
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%"> 
+                                            <span class="input-group-addon" style="width:150px">Bride email</span>
+                                            <input type="email" name = "brideemail" class="form-control"   placeholder="Bride contact email address (eg. mary@gmail.com)" required>
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%"> 
+                                            <span class="input-group-addon" style="width:150px">Groom email</span>
+                                            <input type="email" name = "groomemail" class="form-control"   placeholder="Groom contact email address (eg. john@gmail.com)" required>
+                                        </div>
+
+
+                                        <div id="wedding_datepicker">
+
+                                                <div class="input-group input-group-sm" style="width:100%"> 
+                                                    <span class="input-group-addon " style="width:150px">Wedding date</span>
+                                                   
+                                                        <input id  = "wedding_date" name = "wedding_date" type="text" class="form-control" required>
+                                                        <span class="input-group-addon">
+                                                               <i class="glyphicon glyphicon-th"></i>
+                                                        </span>
+                                           
+                                                </div>
+
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%"> 
+                                            <span class="input-group-addon" style="width:150px">Wedding budget</span>
+                                            <input type="text" name = "budget" class="form-control"   placeholder="Wedding budget" required>
+                                        </div>
+                                    
+                                                        
+                                       
+                                    </div>
+
+                                    <div class="panel-footer clearfix">
+                                        <button type="submit" class="btn btn-primary form-control">Create Wedding</button>
+                                    </div>
+                                </form>
+                                
+                          </div>
+                 
+
+
+                    </div>
+                    <div class="col-md-12">
+
+                         {{> reactiveTable settings=settings }}
+
+                    </div>
+               
+                
+                </div> <!-- End Row -->
+
+    </div> <!-- End Container -->
+</template>

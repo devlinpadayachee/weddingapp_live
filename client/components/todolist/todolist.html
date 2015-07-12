@@ -1,0 +1,102 @@
+<template name="todolist">
+
+    <div class="container">
+
+         
+    <div class="row top-buffer">
+
+    <div class="row">
+
+
+
+      
+
+        <div class="col-md-3">
+
+            <div class="panel panel-danger" >
+
+                  <div class="panel-heading">
+                      <h3 class="panel-title">To Do</h3>
+                  </div>
+
+                    <div class="panel-body">
+                        {{#sortable items=todolist sortField="order" options=todooptions}}
+
+                            <div class="btn btn-danger btn-draggable btn-md btn-block" >
+                                {{title}}
+                            </div>
+
+                                                
+                        {{/sortable}}
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="panel panel-primary" >
+
+                  <div class="panel-heading">
+                      <h3 class="panel-title">In Progress</h3>
+                  </div>
+                   <div class="panel-body">
+                    {{#sortable items=inprogresslist sortField="order" options=inprogressoptions}}
+
+                            <div class="btn btn-primary btn-draggable btn-md btn-block" >
+                                {{title}}
+                            </div>
+
+                                                
+                    {{/sortable}}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+          
+          <div class="panel panel-success" >
+
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Completed</h3>
+                  </div>
+
+                  <div class="panel-body">
+
+                        {{#sortable items=completedlist sortField="order" options=completedoptions}}
+
+                            <div class="btn btn-success btn-draggable btn-md btn-block" >
+                                {{title}}
+                            </div>
+
+                                                
+                        {{/sortable}}
+               
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+          
+          <div class="panel panel-success" >
+
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Controls</h3>
+                  </div>
+
+                  <div class="panel-body">
+                  </div>
+            </div>
+
+        </div>
+
+
+    </div>
+                 
+
+            </div> <!-- End Row -->
+
+    </div> <!-- End Container -->
+</template>

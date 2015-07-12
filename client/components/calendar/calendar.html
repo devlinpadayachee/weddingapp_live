@@ -1,0 +1,164 @@
+<template name="calendar">
+    <div class="container">
+
+            <div class="row top-buffer">
+
+                <div class="col-lg-12 text-center">
+
+                  <ul class="nav nav-tabs nav-justified">
+                      
+                    <li class="active"><a data-toggle="tab" href="#home">Calendar</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Details</a></li>
+                        <li><a data-toggle="tab" href="#menu2">Add events</a></li>
+                        <li><a data-toggle="tab" href="#menu3">Delete events</a></li>
+                    </ul>
+
+                  <div class="tab-content top-buffer">
+                    <div id="home" class="tab-pane fade in active">
+            
+                      <div class = "well">
+                      {{#if Template.subscriptionsReady}}
+
+             
+                         <div id = "calendar"></div>
+                                          
+                        {{else}} <div>{{>spinner}}</div>
+                      {{/if}}
+                      </div>     
+               
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                      <div class = "well">
+                       <p>{{> panel_details_list}}</p>
+                      </div>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                      <div class = "well">
+                        <p>{{> addevent}}</p>
+                      </div>
+                    </div>
+
+                    <div id="menu3" class="tab-pane fade">
+                       <div class = "well">
+                       <p>{{> deletelist}}</p>
+                       </div>
+                    </div>
+                  </div>
+             			
+                </div>
+          </div> 
+    </div>
+</template>
+
+<template name= "deletelist">
+
+                              {{> Paginator_UI paginated_events}}
+                               <div class="list-group">
+                              {{#each paginated_events}}
+                              <button type="button" value =  '{{_id}}' class=" deleteevent btn-block btn-xs list-group-item">{{title}} ( {{start}} - {{end}} )</button>
+                              {{/each}}
+                              </div>
+
+
+
+</template>
+
+
+
+<template name="addevent">
+
+                        <form role = "form" class="form-horizontal" id = "create_event_form">   
+                            
+
+                            <div class="input-group input-group-sm" style="width:100%">
+                        
+                              <input name = "eventtitle" type="text" class="form-control" placeholder="Event title" aria-describedby="sizing-addon3">
+                            </div>
+
+                    
+                           <div id="event_start_picker">
+
+                                                <div class="input-group input-group-sm" style="width:100%"> 
+                                                  
+                                                    <div class="input-group date">
+                                                        <input placeholder="Event start" name = "eventstartdate" type="text" class="form-control" required>
+                                                            <span class="input-group-addon">
+                                                               <i class="glyphicon glyphicon-th"></i>
+                                                            </span>
+                                                    </div>
+                                                </div>
+
+                            </div>
+
+                           <div id="event_end_picker">
+
+                                                <div class="input-group input-group-sm" style="width:100%"> 
+                                                  
+                                                    <div class="input-group date">
+                                                        <input placeholder="Event end" name = "eventenddate" type="text" class="form-control" required>
+                                                            <span class="input-group-addon">
+                                                               <i class="glyphicon glyphicon-th"></i>
+                                                            </span>
+                                                    </div>
+                                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-danger form-control">Create Event</button>
+                        </form>
+
+
+
+</template>
+
+<template name = "panel_details_list">
+
+                               
+                                    <ul class="list-group">
+                                      <li class="list-group-item">
+                                        <span class="badge">{{users_events_count}}</span>
+                                        Total events
+                                      </li>
+                                    </ul>
+                                     
+
+                                    <button class="btn btn-primary" type="button">
+                                      Total events <span class="badge">{{users_events_count}}</span>
+                                    </button> 
+                                    
+                            
+
+                           
+
+                               
+                                    <!--   <div class="list-group">
+                                        <button type="button" class="list-group-item"><span class="badge">{{users_events_count}}</span></button>
+                                        <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+                                        <button type="button" class="list-group-item">Morbi leo risus</button>
+                                        <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+                                        <button type="button" class="list-group-item">Vestibulum at eros</button>
+                                      </div>
+
+                                    <button class="btn btn-info" type="button">
+                                      Total events <span class="badge">{{users_events_count}}</span>
+                                    </button> -->
+                        
+
+                            
+                                
+
+
+</template>
+
+
+<!-- <template name = "eventstemplate">
+          <ul>
+          {{#each users_events}}
+
+          <li>    {{> event title=title }} </li>
+          {{/each}}
+          </ul>
+
+</template>
+<template name = "event">
+  {{title}}
+</template> -->

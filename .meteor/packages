@@ -1,0 +1,38 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+insecure
+accounts-base
+accounts-password
+ian:accounts-ui-bootstrap-3
+iron:router
+mquandalle:bower
+aslagle:reactive-table
+juliancwirko:s-alert
+juliancwirko:s-alert-scale
+juliancwirko:s-alert-slide
+juliancwirko:s-alert-genie
+juliancwirko:s-alert-jelly
+juliancwirko:s-alert-flip
+juliancwirko:s-alert-bouncyflip
+rzymek:fullcalendar
+rajit:bootstrap3-datepicker
+mrt:moment
+sacha:spin
+mantarayar:shortid
+hitchcott:paginator
+rubaxa:sortable
+email
+mizzao:bootboxjs
+sergeyt:typeahead
+juliancwirko:s-alert-stackslide
+cfs:standard-packages
+cfs:gridfs
+jeremy:geocomplete
+bootswatch:darkly
+msavin:mongol
+dbarrett:dropzonejs

@@ -1,0 +1,151 @@
+<template name="vendor">
+
+    <div class="container">
+
+         
+              <div class="row top-buffer">
+
+                    <div class="col-md-12">
+                           
+                            {{> sAlert}}
+                   
+                    </div>
+
+                    <div class="col-md-6">
+
+                          <div class="panel panel-primary" >
+
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Add a vendor</h3>
+                                </div>
+                                <form role = "form" class="form-horizontal" id = "create_vendor_form">
+                                    <div class="panel-body">
+
+                                        <div class="input-group input-group-sm" style="width:100%">
+                                            <span class="input-group-addon"   style="width:150px">Vendor name</span>
+                                            <input type="text" name = "vendorname" class="form-control"  placeholder="Vendor name" required>
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%">
+                                            <span class="input-group-addon"   style="width:150px">Vendor location</span>
+                                                <select class="form-control" name="location">
+                                                    <option>Gauteng</option>
+                                                    <option>Durban</option>
+                                                    <option>Cape Town</option>
+                                                    <option>Port Elizabeth</option>
+                                                </select>
+                                            
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%">
+                                            <span class="input-group-addon"   style="width:150px">Vendor category</span>
+                                                <select class="form-control" name="category">
+                                                    <option>Reception Venues</option>
+                                                    <option>Wedding Photographers</option>
+                                                    <option>DJs</option>
+                                                    <option>Florists</option>
+                                                    <option>Bridal Salons</option>
+                                                    <option>Hotel Room Blocks</option>
+                                                    <option>Wedding Planners</option>
+                                                    <option>Videographers</option>
+                                                    <option>Beauty</option>
+                                                    <option>Wedding Band</option>
+                                                    <option>Wedding Cakes</option>
+                                                    <option>Alterations + Preservation</option>
+                                                    <option>Bar Services</option>
+                                                    <option>Bed and Breakfasts</option>
+                                                    <option>Boudoir Photographers</option>
+                                                    <option>Calligraphers</option>
+                                                    <option>Caterers</option>
+                                                    <option>Ceremony Accessories</option>
+                                                    <option>Dance Lessons</option>
+                                                    <option>Ceremony Venues</option>
+                                                    <option>Decor</option>
+                                                    <option>Desserts</option>
+                                                    <option>Ensembles + Soloists</option>
+                                                    <option>Favors + Gifts</option>
+                                                    <option>Fine Jewelry</option>
+                                                    <option>Fitness</option>
+                                                    <option>Invitations + Paper Goods</option>
+                                                    <option>Lighting</option>
+                                                    <option>Menswear</option>
+                                                    <option>Newlywed Services</option>
+                                                    <option>Officiants + Premarital Counseling</option>
+                                                    <option>Photo Booths</option>
+                                                    <option>Registry Services</option>
+                                                    <option>Rentals</option>
+                                                    <option>Service Staff</option>
+                                                    <option>Shower + Party Venues</option>
+                                                    <option>Technology</option>
+                                                    <option>Transportation</option>
+                                                    <option>Travel Specialists</option>
+                                                    <option>Vacation Homes + Villas</option>
+                                                    <option>Variety Acts</option>
+                                                    <option>Wedding Designers</option>
+                                                    <option>Wedding Jewellery</option>
+                                                </select>
+                                            
+                                        </div>
+
+                                        <div class="input-group input-group-sm" style="width:100%">
+                                            <span class="input-group-addon"   style="width:150px">Vendor tel number</span>
+                                            <input type="tel" name = "contactnumber" class="form-control"  placeholder="Vendor contact number" required>
+                                        </div>
+
+
+                                        <div class="input-group input-group-sm" style="width:100%">
+                                            <span class="input-group-addon"   style="width:150px">Vendor email</span>
+                                            <input type="email" name = "email" class="form-control"  placeholder="Vendor email" required>
+                                        </div>
+
+
+                                        <div class="input-group input-group-sm" style="width:100%">
+                                            <span class="input-group-addon"   style="width:150px">Vendor logo</span>
+                                            <input type="file" name="vendorlogo" class=" form-control myFileInput" >
+                            
+                                        </div>
+
+                              
+                                       
+                                    </div>
+
+                                    <div class="panel-footer clearfix">
+                                        <button type="submit" class="btn btn-primary form-control">Add Vendor</button>
+                                    </div>
+                                </form>
+                                
+                          </div>
+
+                                  {{> imageView}}
+                                                       
+
+                    </div>
+
+
+
+                    <div class="col-md-12">
+
+                         {{> reactiveTable settings=settings }}
+
+                
+
+                    </div>
+
+
+               
+                
+                </div> <!-- End Row -->
+
+    </div> <!-- End Container -->
+</template>
+
+
+<template name="imageView">
+  <div class="imageView">
+    {{#each images}}
+      <div>
+        <a href="{{this.url}}" target="_blank"><img src="{{this.url store='thumbs' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" class="thumbnail" /></a>
+      </div>
+    {{/each}}
+  </div>
+</template>
